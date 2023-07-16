@@ -1,0 +1,45 @@
+<form [formGroup]="form">
+
+
+<div class="row mb-3 ms-1">
+    <div class="col-8">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" formControlName="txtName" class="form-control" placeholder="Name" >
+        <span *ngIf="form.controls['txtName'].touched && form.hasError('required','txtName')">Please fill Name</span>
+    </div>
+</div>
+
+    <div class="row mb-3 ms-1">
+        <div class="col-8">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" formControlName="txtEmail" class="form-control"  placeholder="Email">
+            <span *ngIf="form.controls['txtEmail'].touched && form.hasError('required','txtEmail')">Please fill Name</span>
+            <span *ngIf="form.controls['txtEmail'].touched && form.hasError('email','txtEmail')">Please enter valid email address</span>
+
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-1">
+        <div class="col-8">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="txtPassword" placeholder="Password">
+            <span *ngIf="form.controls['txtPassword'].touched && form.hasError('required','txtPassword')">Please fill Password</span>
+        </div>
+    </div>
+
+    <div class="row mb-3 ms-1">
+        <div class="col-8">
+            <label for="exampleFormControlInput1" class="form-label">Phone</label>
+            <input type="text" class="form-control" formControlName="txtPhone" placeholder="Phone">
+            <span *ngIf="form.controls['txtPhone'].touched && form.hasError('required','txtPhone')">Please fill Phone</span>
+        </div>
+    </div>
+
+
+    <div class="row mb-3 ms-1">
+        <div class="col-8">
+            <input type="button" value="Create Account" class="btn btn-primary" (click)="onSignUp()">
+        </div>
+    </div>
+
+</form>

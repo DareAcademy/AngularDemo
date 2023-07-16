@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+    <div class="row">
+        <div class="col-6">
+
+     <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" formControlName="txtName" class="form-control" placeholder="Name">
+        <span *ngIf="form.controls['txtName'].touched && form.hasError('required','txtName')">Please fill Name</span>
+      </div>
+
+      <div class="mb-3">
+        <input type="button" class="btn btn-primary" value="Save" *ngIf="IsUpdate==false" (click)="save()">
+        <input type="button" class="btn btn-primary" value="Update" *ngIf="IsUpdate==true" (click)="Update()">
+      </div>
+    </div>
+</div>
+
+</form>
